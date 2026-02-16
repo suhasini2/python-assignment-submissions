@@ -20,9 +20,10 @@ scores=[25,60,78]
 def main():
     message=greetingName()
     print(message)
+    print(f"Subjects: {noSub}")
     avg=avgScore(noSub,scores)
-    print(avg)
-    print(result(avg))
+    print(f"Average Score: {avg}")
+    print(f"Result: {result(avg)}")
 
 main()
     
