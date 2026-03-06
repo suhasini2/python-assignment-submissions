@@ -1,0 +1,26 @@
+import json
+
+data="""{"id":"req_123","status":"success","result":{"text":"Hello World","confidence":0.98}}"""
+
+msg=json.loads(data)
+
+req_id=msg['id']
+status=msg['status']
+text=msg['result']['text']
+score=msg['result']['confidence']
+
+print(f"Request ID: {req_id}")
+print(f"Status: {status}")
+print(f"Text: {text}")
+print(f"Confidence: {score}")
+
+if score<0.9:
+    print("No Confidence")
+
+follow_up={
+    "req_id": req_id,
+    "processed": "True",
+}
+
+with open("response.json","w") as file:
+    file.write(json.dumps(follow_up))
