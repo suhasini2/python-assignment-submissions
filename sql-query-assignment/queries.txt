@@ -1,0 +1,35 @@
+#retrive all col
+select * from students
+
+#retrive name, score colmms
+select name, score from students
+
+#retrive students scored >80
+select * from students where score>80
+
+#retrive student records scored above 80 and passed
+select * from students where score>80 and passed=True
+
+#retrive student record scored>80 and class 9
+select * from students where score>85 or class=9
+
+#retrive records students not passed
+select * from students where not passed=True
+
+#retrive distinct student record
+select distinct class from students
+
+#retrive records students scored>80 in descending order
+select * from students where score>80 order by score desc
+
+#retrive records class in ascending order
+select * from students order by class asc
+
+#retrive student records score in descending order
+select * from students order by score desc
+
+#rename the score col as final_score
+select score as final_score from students
+
+#retrive name, score, who scored >75 and order score in descending order and show/limit the above 3 result
+select name, score from students where score>75 order by score desc limit 3
