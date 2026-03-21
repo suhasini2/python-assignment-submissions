@@ -31,5 +31,5 @@ select * from students order by score desc
 #rename the score col as final_score
 select score as final_score from students
 
-#retrive name, score, who scored >75 and order score in descending order and show/limit the above 3 result
+#retrive name, score, who scored >75 and order score in descending order and show/limit the above 3 results
 select name, score from students where score>75 order by score desc limit 3
