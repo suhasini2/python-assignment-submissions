@@ -1,0 +1,22 @@
+select users.name, orders.oder_id from users inner join orders on users.user_id=orders.user_id 
+
+select users.name, sum(orders.amount) from users join orders on users.user_id=orders.user_id group by users.name
+
+select *, * from users left join activity on users.user_id=activity.user_id 
+
+select users.name from users left join orders on users.user_id=orders.user_id where orders.user_id is null
+
+select users.user_id, users.name, orders.amount, activity.login_count from users join orders on users.user_id=orders.user_id join activity on users.user_id=activity.user_id
+
+select distinct users.name from users join orders on users.user_id=orders.user_id where orders.amount>400
+
+select users.name, sum(orders.amount) from users join orders on users.user_id=orders.user_id group by users.name
+
+select users.name, sum(orders.amount) from users join orders on users.user_id=orders.user_id group by users.name order by orders.amount desc
+
+select users.name, activity.login_count from users left join activity on users.user_id=activity.user_id group by users.name order by activity.login_count desc
+
+select users.name, AVG(orders.amount) from users join orders on users.user_id=orders.user_id group by users.name
+
+select users.user_id,users.name,sum(orders.amount), count(activity.login_count) from users left join orders on users.user_id=orders.user_id left join activity on users.user_id=activity.user_id group by users.user_id, users.name order by orders.amount desc limit 3
+
